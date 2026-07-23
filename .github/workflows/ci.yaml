@@ -9,6 +9,19 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  check-dot-env-comments:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        scope:
+          - .env.dist
+          - service/.env
+    steps:
+      - uses: actions/checkout@v6.0.2
+      - uses: corytech/check-dot-env-comments@v0.1.1
+        with:
+          file-path: '${{ matrix.scope }}'
+
   check-build-is-ok:
     name: Build ${{ matrix.platform }}
     strategy:
@@ -43,3 +56,16 @@ jobs:
           build-args: |
             VERSION=0.0.0
           no-cache: true
+
+  check-if-all-the-test-passed:
+    runs-on: ubuntu-latest
+    needs:
+      - check-dot-env-comments
+      - check-build-is-ok
+    steps:
+      - name: test suite success
+        if: ${{ !(contains(needs.*.result, 'failure')) }}
+        run: exit 0
+      - name: test suite failures
+        if: ${{ contains(needs.*.result, 'failure') }}
+        run: exit 1
