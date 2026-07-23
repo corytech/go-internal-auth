@@ -14,8 +14,7 @@ jobs:
     strategy:
       matrix:
         scope:
-          - .env.dist
-          - service/.env
+          - .env
     steps:
       - uses: actions/checkout@v6.0.2
       - uses: corytech/check-dot-env-comments@v0.1.1
