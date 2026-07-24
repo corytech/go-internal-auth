@@ -14,7 +14,7 @@ func InternalAuthHeaderCheck() gin.HandlerFunc {
 
 		if internalAuthHeader != internalAuthToken {
 			openapi.NewError(AuthentificationFailed).Send(ctx)
-			return
+			ctx.Abort()
 		}
 
 		ctx.Next()
