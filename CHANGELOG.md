@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.1](https://github.com/corytech/go-internal-auth/compare/v1.0.0...v1.0.1) (2026-07-24)
+
+
+### 🐛 Bugfixes
+
+* func exit ([19460e0](https://github.com/corytech/go-internal-auth/commit/19460e091e962b7d466d329a4033d9d4b2e2c69a))
+* func exit ([fbc586d](https://github.com/corytech/go-internal-auth/commit/fbc586dd284e44243145da17dbd0310b5becf628))
+
 ## 1.0.0 (2026-07-24)
 
 
