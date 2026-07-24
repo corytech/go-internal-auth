@@ -7,7 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func InternalAuthHeaderCheck(internalAuthToken string) gin.HandlerFunc {
+func InternalAuthHeaderCheck() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 		internalAuthToken := os.Getenv("INTERNAL_AUTH_TOKEN")
 		internalAuthHeader := ctx.GetHeader("Internal-Authorization")
