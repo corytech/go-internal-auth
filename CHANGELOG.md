@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/corytech/go-internal-auth/compare/v1.0.1...v1.0.2) (2026-08-04)
+
+
+### 🧰 Maintenance
+
+* **CPD-8393:** Pin external actions with SHA ([#6](https://github.com/corytech/go-internal-auth/issues/6)) ([46b842d](https://github.com/corytech/go-internal-auth/commit/46b842d60ce5ddc144df4e6e96b58808d89af2b2))
+
 ## [1.0.1](https://github.com/corytech/go-internal-auth/compare/v1.0.0...v1.0.1) (2026-07-24)
 
 
